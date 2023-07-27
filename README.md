@@ -1,4 +1,4 @@
-# ensure-dir-cached
+# ensure-path-cached
 
   * native ESM, type: module (.mjs)
   * Ensures pre-existing dirs already exists
@@ -9,13 +9,13 @@
 # Usage
 
 ```javascript
-import EnsureDirCached from 'ensure-path-cached.mjs'
+import EnsurePathCached from 'ensure-path-cached.mjs'
 
-const ensureDirCached = new EnsureDirCached()
+const ensurePathCached = new EnsurePathCached()
 
 try {
   // preExistingPath is optional and defaults to process.cwd()
-  await ensureDirCached.ensurePathExists(pathPrefixToCreate, preExistingPath)
+  await ensurePathCached.ensurePathExists(pathPrefixToCreate, preExistingPath)
   /*
    * OR
    * 
@@ -28,7 +28,7 @@ try {
    * }
    * </pre>
    */
-  await ensureDirCached.ensurePeriodicDirAtPathExists(properties)
+  await ensurePathCached.ensurePeriodicDirAtPathExists(properties)
 } catch (e) {
   // handle error
 }

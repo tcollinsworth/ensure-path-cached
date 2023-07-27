@@ -7,7 +7,7 @@ import { DateTime } from 'luxon'
 const cwd = process.cwd()
 
 const defaultOptions = {
-  cacheName: 'ensureDirCache',
+  cacheName: 'ensurePathCache',
   maxEntries: 100,
   ttlMs: 86400000, // 1 day
 }
