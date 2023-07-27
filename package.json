@@ -1,6 +1,6 @@
 {
   "name": "ensure-path-cached",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "native ES6 ESM module, ensures path exits, shortcut for ensuring periodic dir, uses cache to avoid unnecessarily accessing remote fs, i.e., NFS/EFS",
   "type": "module",
   "engines": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git"
+    "url": "git@github.com:tcollinsworth/ensure-path-cached.git"
   },
   "keywords": [
     "ensure",
