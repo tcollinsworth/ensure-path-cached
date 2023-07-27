@@ -1,0 +1,43 @@
+{
+  "name": "ensure-path-cached",
+  "version": "1.0.0",
+  "description": "native ES6 ESM module, ensures path exits, shortcut for ensuring periodic dir, uses cache to avoid unnecessarily accessing remote fs, i.e., NFS/EFS",
+  "type": "module",
+  "engines": {
+    "node": "^18.16 || ^20.4"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext=js,mjs --ext=js,mjs --fix",
+    "test": "ava --config=ava-config-unit.mjs",
+    "testDebug": "node --inspect-brk node_modules/.bin/ava --serial --config=ava-config-unit.mjs",
+    "coverage": "c8 --all --reporter=html --reporter=text npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "keywords": [
+    "ensure",
+    "path",
+    "dir",
+    "periodic",
+    "cache",
+    "esm"
+  ],
+  "author": "troy.collinsworth@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^5.3.1",
+    "c8": "^8.0.1",
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-unused-imports": "^3.0.0"
+  },
+  "dependencies": {
+    "@tcollinsworth/lrucache": "^1.0.3",
+    "lodash.merge": "^4.6.2",
+    "luxon": "^3.3.0"
+  }
+}
