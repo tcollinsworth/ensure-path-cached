@@ -77,7 +77,7 @@ export class EnsurePathCached {
    * [Periodic date time format](https://moment.github.io/luxon/#/formatting?id=table-of-tokens)
    *
    * @param properties - attempts to create all directories that are missing, default none
-   * @returns {Promise<boolean>}
+   * @returns {Promise<string>} - complete path
    */
   async ensurePeriodicDirAtPathExists(properties) {
     const props = merge(defaultPeriodicDirProperties, properties)
@@ -91,13 +91,13 @@ export class EnsurePathCached {
     const formattedDateString = getFormattedDateString(props.date, props.dateTimeFormatString)
 
     const completePath = `${props.preExistingPathPrefix}${props.pathPrefixToCreate}/${formattedDateString}`
-    if (this.cache.get(completePath)) return true
+    if (this.cache.get(completePath)) return completePath
 
     const pathToCreate = `${props.pathPrefixToCreate}/${formattedDateString}`
     await this.ensurePathExists(pathToCreate, props.preExistingPathPrefix)
 
     this.cache.put(completePath, true)
-    return true
+    return completePath
   }
 
   /**

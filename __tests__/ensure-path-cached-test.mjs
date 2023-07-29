@@ -130,16 +130,20 @@ test('ensurePeriodicDirAtPathExists pathPrefixToCreate and test date', async (t)
     date: testDate,
   }
 
-  await ensurePath.ensurePeriodicDirAtPathExists(props)
+  const expectedCompletePath = `${testDirPrefix}${pathPrefixToCreate}/${testDateDirString}`
+
+  let completePath = await ensurePath.ensurePeriodicDirAtPathExists(props)
 
   // throws error if dir wasn't created
-  await fs.promises.access(`${testDirPrefix}${pathPrefixToCreate}/${testDateDirString}`)
+  await fs.promises.access(expectedCompletePath)
 
+  t.is(completePath, expectedCompletePath)
   t.is(ensurePath.getCacheStats().hits, 0)
   t.is(ensurePath.getCacheStats().misses, 3)
 
-  await ensurePath.ensurePeriodicDirAtPathExists(props)
+  completePath = await ensurePath.ensurePeriodicDirAtPathExists(props)
 
+  t.is(completePath, expectedCompletePath)
   t.is(ensurePath.getCacheStats().hits, 1)
   t.is(ensurePath.getCacheStats().misses, 3)
 })
