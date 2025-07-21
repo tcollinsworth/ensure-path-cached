@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:tcollinsworth/ensure-path-cached.git"
+    "url": "git+ssh://git@github.com/tcollinsworth/ensure-path-cached.git"
   },
   "keywords": [
     "ensure",
