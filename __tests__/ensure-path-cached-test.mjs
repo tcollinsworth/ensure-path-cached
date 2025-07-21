@@ -15,7 +15,7 @@ const testCreateDir = 'testCreateDir'
 const testCreatePath = `${testDirPrefix}/${testCreateDir}`
 
 const pathPrefixToCreate = '/pathPrefixToCreate'
-const testDate = new Date(2020, 0, 1, 0, 0, 0)
+const testDate = new Date(Date.UTC(2020, 0, 1, 0, 0, 0))
 const testDateDirString = '20200101'
 
 test.beforeEach(async (t) => {
